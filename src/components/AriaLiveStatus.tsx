@@ -1,8 +1,12 @@
-function AriaLiveStatus(props) {
+type AriaLiveStatusProps = {
+    won: boolean
+}
+
+function AriaLiveStatus({ won }: AriaLiveStatusProps) {
     return (
 
         <div aria-live="polite" className="sr-only">
-            {props.won && <p>Congratulations! You won! Press "New Game" to start again.</p>}
+            {won && <p>Congratulations! You won! Press "New Game" to start again.</p>}
         </div>
 
     )

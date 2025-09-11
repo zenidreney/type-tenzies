@@ -1,10 +1,24 @@
-export default function Die(props) {
-    const styles = {
+type Styles = {
+    backgroundColor: string
+}
+
+//write dieProps
+
+type DieProps = {
+    hold: () => void
+    isHeld: boolean
+    value: number
+}
+
+export default function Die(props: DieProps) {
+
+  
+    const styles: Styles = {
         backgroundColor: props.isHeld ? "#59E391" : "white"
     }
-    
+
     return (
-        <button 
+        <button
             style={styles}
             onClick={props.hold}
             aria-pressed={props.isHeld}

@@ -1,12 +1,19 @@
-function Button(props) {
-    console.log(props)
-    return (
-        <button ref={props.ref} className="roll-dice" onClick={props.onRoll}>
-                {props.won ? "New Game" : "Roll"}
-            </button> 
-    )
+import { forwardRef } from "react"
+
+type ButtonProps = {
+    won: boolean
+    onRoll(): void
 }
 
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button( {won, onRoll} , ref) {
+    //console.log(props)
+    return (
+        <button ref={ref} className="roll-dice" onClick={onRoll}>
+            {won ? "New Game" : "Roll"}
+        </button>
+    )
+}
+)
 export default Button
 
 

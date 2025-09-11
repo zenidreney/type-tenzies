@@ -1,9 +1,16 @@
 import Die from "./Die"
+import type { Dice } from "../App"
+import type { JSX } from "react"
 
-function DiceContainer({ dice, hold }) {
+type DiceContainerProps = {
+  dice: Dice[]
+  hold: (id: string) => void
+}
+
+function DiceContainer({ dice, hold }: DiceContainerProps):JSX.Element {
     //console.log(props)
 
-    const diceElements = dice.map(dieObj => (
+    const diceElements:JSX.Element[] = dice.map(dieObj => (
         <Die
           key={dieObj.id}
           value={dieObj.value}
