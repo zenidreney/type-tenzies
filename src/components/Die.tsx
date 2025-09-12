@@ -1,3 +1,5 @@
+import type { JSX } from "react"
+
 type Styles = {
     backgroundColor: string
 }
@@ -10,8 +12,7 @@ type DieProps = {
     value: number
 }
 
-export default function Die(props: DieProps) {
-
+export default function Die(props: DieProps): JSX.Element {
   
     const styles: Styles = {
         backgroundColor: props.isHeld ? "#59E391" : "white"

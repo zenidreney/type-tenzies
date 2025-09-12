@@ -8,7 +8,6 @@ type DiceContainerProps = {
 }
 
 function DiceContainer({ dice, hold }: DiceContainerProps):JSX.Element {
-    //console.log(props)
 
     const diceElements:JSX.Element[] = dice.map(dieObj => (
         <Die

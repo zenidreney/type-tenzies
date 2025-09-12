@@ -3,7 +3,9 @@ import AriaLiveStatus from "./components/AriaLiveStatus"
 import Header from "./components/Header"
 import DiceContainer from "./components/DiceContainer"
 import Button from "./components/Button"
+//import Confetti from "react-confetti"
 
+import type { JSX } from "react"
 import { nanoid } from "nanoid"
 
 export type Dice = {
@@ -13,9 +15,8 @@ export type Dice = {
 }
 
 
-//import Confetti from "react-confetti"
 
-export default function App() {
+export default function App():JSX.Element {
   const [dice, setDice] = useState<Dice[]>((): Dice[] => generateAllNewDice())
   const buttonRef = useRef<HTMLButtonElement>(null)
 
@@ -28,7 +29,7 @@ export default function App() {
     }
   }, [gameWon])
 
-  function generateAllNewDice() {
+  function generateAllNewDice():Dice[] {
     return new Array(10)
       .fill(0)
       .map(() => ({
@@ -50,7 +51,7 @@ export default function App() {
     }
   }
 
-  function hold(id: string) {
+  function hold(id: string): void {
     setDice(oldDice => oldDice.map(die =>
       die.id === id ?
         { ...die, isHeld: !die.isHeld } :
@@ -61,7 +62,7 @@ export default function App() {
 
   return (
     <main>
-      {/*     {gameWon && <Confetti />} */}
+      {/* {gameWon && <Confetti />} */}
       <AriaLiveStatus
         won={gameWon}
       />

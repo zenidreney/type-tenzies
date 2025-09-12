@@ -1,8 +1,10 @@
+import type { JSX } from "react"
+
 type AriaLiveStatusProps = {
     won: boolean
 }
 
-function AriaLiveStatus({ won }: AriaLiveStatusProps) {
+function AriaLiveStatus({ won }: AriaLiveStatusProps): JSX.Element {
     return (
 
         <div aria-live="polite" className="sr-only">

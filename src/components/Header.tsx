@@ -1,6 +1,6 @@
 import type { JSX } from "react"
 
-function Header():JSX.Element {
+function Header(): JSX.Element {
     return (
         <>
             <h1 className="title">Tenzies</h1>
